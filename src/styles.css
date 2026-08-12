@@ -79,7 +79,7 @@
   --secondary-foreground: oklch(0.36 0.03 20);
 
   --muted: oklch(0.958 0.012 70);
-  --muted-foreground: oklch(0.53 0.024 25);
+  --muted-foreground: oklch(0.44 0.026 25);
 
   --accent: oklch(0.93 0.031 15);
   --accent-foreground: oklch(0.36 0.045 15);
@@ -158,11 +158,23 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.25rem;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
     -webkit-font-smoothing: antialiased;
+  }
+
+  p {
+    line-height: 1.7;
   }
 
   h1,
@@ -173,7 +185,12 @@
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: -0.01em;
+    line-height: 1.2;
   }
+}
+
+@utility scroll-section {
+  scroll-margin-top: 5.25rem;
 }
 
 @utility bg-gradient-blush {
