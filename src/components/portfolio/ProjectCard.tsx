@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -13,7 +13,15 @@ import { cn } from "@/lib/utils";
 import { useLang } from "@/lib/i18n";
 import { projectImages, type Project } from "@/data/content";
 
-function ProjectCarousel({ images, title, slideLabel }: { images: string[]; title: string; slideLabel: string }) {
+function ProjectCarousel({
+  images,
+  title,
+  slideLabel,
+}: {
+  images: string[];
+  title: string;
+  slideLabel: string;
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -113,7 +121,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
 
         <div className="mt-6 space-y-6">
           <Block label={L.overview}>{project.overview}</Block>
-
           {open && (
             <>
               <Block label={L.problem}>{project.problem}</Block>
@@ -157,13 +164,41 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           </Block>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <Button variant="outline" onClick={() => setOpen((v) => !v)}>
             {open ? L.hideDetail : L.viewDetail}
             <ChevronDown
               className={cn("transition-transform duration-300", open && "rotate-180")}
             />
           </Button>
+
+          {project.demoUrl && (
+            <Button asChild variant="default">
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                {L.viewDemo}
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+          )}
+
+          {project.driveUrl && (
+            <Button asChild variant="default">
+              <a
+                href={project.driveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                {L.viewDrive}
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </article>

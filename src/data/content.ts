@@ -1,6 +1,35 @@
-import placeholderData from "@/assets/placeholder-data.jpg";
-import placeholderGis from "@/assets/placeholder-gis.jpg";
-import placeholderWeb from "@/assets/placeholder-web.jpg";
+// --- 1. Import Gambar Ecommerce (3) ---
+import ecommerce1 from "@/assets/ecommerce-1.jpg";
+import ecommerce2 from "@/assets/ecommerce-2.jpg";
+import ecommerce3 from "@/assets/ecommerce-3.jpg";
+
+// --- 2. Import Gambar Salaries (2) ---
+import salaries1 from "@/assets/salaries-1.jpg";
+import salaries2 from "@/assets/salaries-2.jpg";
+
+// --- 3. Import Gambar TWP90 (3) ---
+import twp90_1 from "@/assets/twp90-1.jpg";
+import twp90_2 from "@/assets/twp90-2.jpg";
+import twp90_3 from "@/assets/twp90-3.jpg";
+
+// --- 4. Import Gambar WebGIS Rice (3) ---
+import webgis1 from "@/assets/webgis-1.jpg";
+import webgis2 from "@/assets/webgis-2.jpg";
+import webgis3 from "@/assets/webgis-3.jpg";
+
+// --- 5. Import Gambar Kanban (3) ---
+import kanban1 from "@/assets/kanban-1.jpg";
+import kanban2 from "@/assets/kanban-2.jpg";
+import kanban3 from "@/assets/kanban-3.jpg";
+
+// --- 6. Import Gambar REST API (2) ---
+import restApi1 from "@/assets/rest-api-1.jpg";
+import restApi2 from "@/assets/rest-api-2.jpg";
+
+// --- 7. Import Gambar RMU Profile (3) ---
+import rmu1 from "@/assets/rmu-1.jpg";
+import rmu2 from "@/assets/rmu-2.jpg";
+import rmu3 from "@/assets/rmu-3.jpg";
 
 export type Lang = "en" | "id";
 
@@ -12,18 +41,18 @@ export const profile = {
   linkedinLabel: "linkedin.com/in/ariskafebrilianti",
   github: "https://github.com/ariskafebrilianti",
   githubLabel: "github.com/ariskafebrilianti",
-  whatsapp: "https://wa.me/6281234567890",
+  whatsapp: "https://wa.me/6281215841637",
 };
 
-/** Swap these with real screenshots — order defines carousel order. */
+/** Swap these with real screenshots – order defines carousel order. */
 export const projectImages: Record<string, string[]> = {
-  ecommerce: [placeholderData, placeholderWeb, placeholderGis],
-  salaries: [placeholderData, placeholderWeb],
-  twp90: [placeholderData, placeholderWeb, placeholderGis],
-  "webgis-rice": [placeholderGis, placeholderData, placeholderWeb],
-  kanban: [placeholderWeb, placeholderData],
-  "rest-api": [placeholderWeb, placeholderData],
-  "rmu-profile": [placeholderWeb, placeholderData, placeholderGis],
+  ecommerce: [ecommerce1, ecommerce2, ecommerce3],
+  salaries: [salaries1, salaries2],
+  twp90: [twp90_1, twp90_2, twp90_3],
+  "webgis-rice": [webgis1, webgis2, webgis3],
+  kanban: [kanban1, kanban2, kanban3],
+  "rest-api": [restApi1, restApi2],
+  "rmu-profile": [rmu1, rmu2, rmu3],
 };
 
 export type ProjectCategory = "data" | "frontend";
@@ -39,6 +68,8 @@ export type Project = {
   objectives?: string[];
   result: string;
   stack: string[];
+  demoUrl?: string;
+  driveUrl?: string;
 };
 
 export type Dictionary = {
@@ -64,6 +95,9 @@ export type Dictionary = {
     viewDetail: string;
     hideDetail: string;
     slide: string;
+    viewDemo: string;
+  viewDrive: string;
+    
   };
   about: { eyebrow: string; heading: string; text: string; stats: { value: string; label: string }[] };
   skills: { eyebrow: string; heading: string; description: string; groups: { title: string; items: string[] }[] };
@@ -133,6 +167,8 @@ export const content: Record<Lang, Dictionary> = {
       viewDetail: "View Details",
       hideDetail: "Hide Details",
       slide: "Slide",
+   viewDemo: "Live Demo / Web",
+    viewDrive: "View Drive Files",
     },
     about: {
       eyebrow: "About",
@@ -167,7 +203,7 @@ export const content: Record<Lang, Dictionary> = {
         },
         {
           title: "Programming",
-          items: ["JavaScript (ES6+)", "TypeScript", "Python (Pandas, Seaborn)"],
+          items: ["JavaScript (ES6+)", "TypeScript"],
         },
         {
           title: "Visualization & Tools",
@@ -245,6 +281,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "E-Commerce Sales & Customer Analytics",
           category: "data",
           stackLine: "SQL, Python, Excel Dashboard",
+          driveUrl: "https://drive.google.com/drive/folders/1fyzFJmTJrM7OIlAQaeKUj87xGWwvVH8X?usp=drive_link",
           overview:
             "End-to-end analysis of international e-commerce retail transaction data totaling over £10M in gross sales, aimed at understanding transaction trends, customer segmentation, and product efficiency.",
           problem:
@@ -268,6 +305,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Data Science Salaries & Compensation Analysis",
           category: "data",
           stackLine: "SQL Analytics",
+          driveUrl: "https://drive.google.com/file/d/1Okp2Tsq96bxGZuj3uF--RgZjuiGVSfx2/view?usp=sharing",
           overview:
             "In-depth SQL query analysis on a global Data Science salary dataset to map compensation benchmarks.",
           problem:
@@ -287,6 +325,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Macroeconomic Dynamics & MSME Credit Risk Assessment (TWP90 Analytics)",
           category: "data",
           stackLine: "Excel + MySQL + Power BI",
+          driveUrl: "https://drive.google.com/drive/folders/1eV_psvmHXOnPlDQzC9lhZ0Ygqu_xZckZ?usp=sharing",
           overview:
             "Analysis of how macroeconomic conditions (BI Rate & inflation) affect credit default risk (TWP90 — 90+ day default rate) in Indonesia's P2P Lending fintech industry, using official OJK data from July 2024–March 2026.",
           problem:
@@ -311,6 +350,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "WebGIS Rice Distribution & Supply Chain Mapping System",
           category: "frontend",
           stackLine: "JavaScript, Leaflet.js, QGIS",
+          demoUrl: "https://ariskafebrilianti.github.io/webgis/",
           overview:
             "An interactive WebGIS platform mapping and analyzing the rice supply chain and distribution network of RMU Teaching Industry UNSOED in the Banyumas region, covering 20+ consumers, 5 distributors, and 88 suppliers.",
           problem:
@@ -329,6 +369,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Interactive Kanban Task Management Application",
           category: "frontend",
           stackLine: "React.js, Vite, TypeScript",
+          demoUrl: "https://ariskafebrilianti.github.io/Kanban-App/",
           overview:
             "An interactive task management (to-do list) application built as a Single Page Application (SPA) to support workflow efficiency and real-time project progress tracking.",
           problem:
@@ -348,6 +389,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Dynamic REST API Integration Apps (Get Pokemon & Get Pikachu)",
           category: "frontend",
           stackLine: "JavaScript ES6+, REST API",
+          demoUrl: "https://ariskafebrilianti.github.io/getPokemon/",
           overview:
             "A series of lightweight frontend web applications designed to test external REST API integration and dynamic DOM manipulation.",
           problem:
@@ -366,6 +408,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "RMU UNSOED Company Profile Website",
           category: "frontend",
           stackLine: "HTML5, CSS3, JavaScript, Figma",
+          demoUrl: "https://ariskafebrilianti.github.io/TeachingIndustryUNSOED/",
           overview:
             "A responsive company profile website introducing products, post-harvest operations, and store locations for RMU Teaching Industry UNSOED.",
           problem:
@@ -447,6 +490,8 @@ export const content: Record<Lang, Dictionary> = {
       viewDetail: "Lihat Detail",
       hideDetail: "Sembunyikan Detail",
       slide: "Slide",
+      viewDemo: "Lihat Demo / Web",
+    viewDrive: "Lihat Berkas Drive",
     },
     about: {
       eyebrow: "Tentang",
@@ -559,6 +604,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "E-Commerce Sales & Customer Analytics",
           category: "data",
           stackLine: "SQL, Python, Excel Dashboard",
+          driveUrl: "https://drive.google.com/drive/folders/1fyzFJmTJrM7OIlAQaeKUj87xGWwvVH8X?usp=drive_link",
           overview:
             "Analisis end-to-end data transaksi e-commerce ritel internasional dengan total gross sales lebih dari £10 juta, untuk memahami tren transaksi, segmentasi pelanggan, dan efisiensi produk.",
           problem:
@@ -577,6 +623,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Data Science Salaries & Compensation Analysis",
           category: "data",
           stackLine: "SQL Analytics",
+          driveUrl: "https://drive.google.com/file/d/1Okp2Tsq96bxGZuj3uF--RgZjuiGVSfx2/view?usp=sharing",
           overview:
             "Analisis kueri SQL mendalam pada dataset gaji industri Data Science global untuk memetakan benchmark kompensasi.",
           problem:
@@ -596,6 +643,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Macroeconomic Dynamics & MSME Credit Risk Assessment (TWP90 Analytics)",
           category: "data",
           stackLine: "Excel + MySQL + Power BI",
+          driveUrl: "https://drive.google.com/drive/folders/1eV_psvmHXOnPlDQzC9lhZ0Ygqu_xZckZ?usp=sharing",
           overview:
             "Analisis pengaruh kondisi ekonomi makro (BI Rate & inflasi) terhadap tingkat risiko kredit macet (TWP90 — Tingkat Wanprestasi >90 hari) pada industri Fintech P2P Lending di Indonesia, menggunakan data resmi OJK periode Juli 2024–Maret 2026.",
           problem:
@@ -620,6 +668,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "WebGIS Rice Distribution & Supply Chain Mapping System",
           category: "frontend",
           stackLine: "JavaScript, Leaflet.js, QGIS",
+          demoUrl: "https://ariskafebrilianti.github.io/webgis/",
           overview:
             "Platform WebGIS interaktif untuk memetakan dan menganalisis rantai pasok serta distribusi beras RMU Teaching Industry UNSOED di wilayah Banyumas, mencakup 20+ konsumen, 5 distributor, dan 88 supplier.",
           problem:
@@ -638,6 +687,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Interactive Kanban Task Management Application",
           category: "frontend",
           stackLine: "React.js, Vite, TypeScript",
+          demoUrl: "https://ariskafebrilianti.github.io/Kanban-App/",
           overview:
             "Aplikasi manajemen tugas (to-do list) interaktif berbasis Single Page Application (SPA) untuk membantu efisiensi alur kerja dan pelacakan progres proyek secara real-time.",
           problem:
@@ -657,6 +707,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "Dynamic REST API Integration Apps (Get Pokemon & Get Pikachu)",
           category: "frontend",
           stackLine: "JavaScript ES6+, REST API",
+          demoUrl: "https://ariskafebrilianti.github.io/getPokemon/",
           overview:
             "Serial aplikasi web frontend ringan yang dirancang untuk menguji integrasi REST API eksternal dan manipulasi DOM secara dinamis.",
           problem:
@@ -675,6 +726,7 @@ export const content: Record<Lang, Dictionary> = {
           title: "RMU UNSOED Company Profile Website",
           category: "frontend",
           stackLine: "HTML5, CSS3, JavaScript, Figma",
+          demoUrl: "https://ariskafebrilianti.github.io/TeachingIndustryUNSOED/",
           overview:
             "Website profil perusahaan komersial yang responsif untuk memperkenalkan produk, operasional pascapanen, dan lokasi toko RMU Teaching Industry UNSOED.",
           problem:
